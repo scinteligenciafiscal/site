@@ -183,6 +183,18 @@ border-radius:20px;padding:clamp(28px,5vw,56px)}
  .cards{grid-template-columns:1fr}.rodape .cols{grid-template-columns:1fr 1fr}
  .lider{gap:40px}.foto{max-width:420px}
 }
+/* menu: hambúrguer até 1080 px — com "Simulador" e "Jornal" o menu não cabe em 768 (auditoria web, 16/10/2026) */
+.nav a,.marca{white-space:nowrap}
+html{scroll-padding-top:96px}
+@media (max-width:1080px){
+ .menu-btn{display:block}
+ .nav{position:fixed;inset:76px 0 auto 0;background:var(--branco);color:var(--navy);flex-direction:column;align-items:flex-start;gap:0;
+ padding:8px 16px 24px;border-bottom:1px solid var(--linha);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
+ .nav a{padding:14px 0;width:100%;border-bottom:1px solid var(--linha);font-size:17px}
+ .nav .btn{margin-top:16px;border-bottom:0;width:auto}
+ .hdr.aberto .nav{transform:none;opacity:1;pointer-events:auto}
+ .hdr.aberto{background:var(--branco);color:var(--navy)}
+}
 @media (max-width:760px){
  .cx{padding:0 16px}
  .menu-btn{display:block}
